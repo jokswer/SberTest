@@ -1,21 +1,39 @@
 import { Navigation } from 'react-native-navigation';
 
-import App from './App';
-import { name as appName } from './app.json';
+import { ScreenNames } from './src/navigation';
+import { App } from './src/App';
 
-Navigation.registerComponent(appName, () => App);
+App();
+
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {
-            stack: {
+            bottomTabs: {
                 children: [
                     {
-                        component: {
-                            name: appName,
-                        },
+                        stack: {
+                            children: [
+                                {
+                                    component: {
+                                        name: ScreenNames.ALL_FILMS
+                                    }
+                                },
+                            ]
+                        }
                     },
-                ],
-            },
-        },
-    });
+                    {
+                        stack: {
+                            children: [
+                                {
+                                    component: {
+                                        name: ScreenNames.FAVORITES
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    })
 });
