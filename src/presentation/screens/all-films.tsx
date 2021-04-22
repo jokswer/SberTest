@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import {IFilm} from '../../@types';
 import {ADD_TO_FAVORITES, colors} from '../../constants';
-import {getFilmsThunk, IFilmState} from '../../reducers/films';
+import {getFilmsThunk, IFilmState} from '../../reducers/films-store';
 import {FilmCard, FilmModal, modalHeight, Loading} from '../components';
 
 const keyExtractor = (item: IFilm) => item.id;

@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import {IFilm} from '../../@types';
 import {colors, DELETE_FROM_FAVORITES} from '../../constants';
-import {IFavoritesState} from '../../reducers/favorites';
+import {IFavoritesState} from '../../reducers/favorites-store';
 import {FilmCard} from '../components';
 
 const keyExtractor = (item: IFilm) => item.id;
